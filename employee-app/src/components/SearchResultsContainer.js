@@ -6,15 +6,23 @@ import API from "../utils/API";
 
 class SearchResultsContainer extends Component {
     state = {
-        employee: []
-    }
+        search: "",
+        results: []
+
+    };
+    
 
     componentDidMount() {
         this.getEmployee()
+       
     }
 
     getEmployee = () => {
-        API.getEmployee().then(res => this.setState({employee: res.data.results}))
+        API.getEmployee().then(res => 
+            this.setState({ results: res.data.results}))
+        .catch(err => console.log(err));
+        
+
     }
 
     render() {
@@ -22,7 +30,7 @@ class SearchResultsContainer extends Component {
             <div>
                 <Header/>
                 <SearchForm/>
-                <SearchResults/>
+                <SearchResults results= {this.state.results}/>
                 {/* <SearchForm/>
                 <SearchResults/> */}
 
