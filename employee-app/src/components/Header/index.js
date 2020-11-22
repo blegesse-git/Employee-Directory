@@ -6,7 +6,7 @@ function Header() {
     <div className="jumbotron jumbotron-fluid">
         <div className="container">
             <h1 className="display-4">Employee Directory</h1>
-                <p className="lead">Click on carrots to filter by heading or use the search box to narrow results</p>
+                <p className="lead">Click on age to filter by age or use the search box to narrow results</p>
         </div>
     </div>
   );
